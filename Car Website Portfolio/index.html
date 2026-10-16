@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172a2b">
+  <meta name="description" content="The portfolio of Carin N. Benjamin, project manager and Information Systems graduate.">
+  <title>Carin N. Benjamin | Project Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1b2929;
+      --deep: #172a2b;
+      --paper: #f6f4ef;
+      --white: #fffefa;
+      --copper: #b7774c;
+      --muted: #687371;
+      --line: #dcded8;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
+    a { color: inherit; }
+    button, input { font: inherit; }
+    .topline { height: 8px; background: linear-gradient(90deg, var(--deep) 0 72%, var(--copper) 72% 100%); }
+    .shell { width: min(1180px, calc(100% - 64px)); margin-inline: auto; }
+    .site-header { height: 82px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+    .wordmark { display: flex; align-items: center; gap: 12px; text-decoration: none; font-size: 14px; font-weight: 700; letter-spacing: .02em; }
+    .monogram { width: 34px; height: 34px; display: grid; place-items: center; background: var(--deep); color: var(--white); font-family: var(--serif); font-size: 15px; }
+    .nav { display: flex; align-items: center; gap: 30px; }
+    .nav a { text-decoration: none; color: #52605e; font-size: 13px; font-weight: 600; }
+    .nav a:hover, .nav a:focus-visible { color: var(--copper); }
+    .nav .nav-contact { padding: 10px 15px; border: 1px solid var(--deep); color: var(--deep); }
+    .hero { position: relative; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 60px; padding: 76px 0 84px; }
+    .hero::before { content: ""; position: absolute; z-index: -1; left: -10vw; top: 0; width: 56vw; height: 100%; background: var(--white); }
+    .eyebrow { margin: 0 0 18px; color: var(--copper); font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 680px; margin-bottom: 14px; font-family: var(--serif); font-size: clamp(48px, 6vw, 76px); font-weight: 600; letter-spacing: 0; line-height: 1.04; }
+    .hero-role { margin-bottom: 24px; color: #53615f; font-size: 19px; }
+    .hero-copy { max-width: 520px; margin-bottom: 30px; color: #586360; font-size: 15px; }
+    .actions { display: flex; align-items: center; gap: 12px; }
+    .button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; padding: 0 18px; border: 1px solid var(--deep); text-decoration: none; font-size: 13px; font-weight: 700; transition: background .2s ease, color .2s ease, transform .2s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--deep); color: white; }
+    .button-primary:hover { background: var(--copper); border-color: var(--copper); }
+    .button-quiet { color: var(--deep); }
+    .button-quiet:hover { background: var(--deep); color: white; }
+    .portrait-wrap { position: relative; justify-self: end; width: min(100%, 390px); aspect-ratio: .88; padding: 14px; border: 1px solid #d7d5cc; background: var(--paper); }
+    .portrait { position: relative; width: 100%; height: 100%; display: grid; place-items: center; overflow: hidden; background: #e9e7df; }
+    .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 36%; }
+    .portrait-placeholder { display: grid; place-items: center; color: var(--deep); text-align: center; }
+    .portrait-placeholder strong { font-family: var(--serif); font-size: 78px; font-weight: 500; line-height: 1; }
+    .portrait-placeholder span { margin-top: 13px; color: #687371; font-size: 10px; font-weight: 700; letter-spacing: .16em; }
+    .portrait-caption { position: absolute; right: -18px; bottom: 25px; width: 120px; padding: 11px 13px; background: var(--deep); color: white; font-size: 11px; line-height: 1.4; }
+    .section { padding: 76px 0; border-top: 1px solid var(--line); }
+    .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 34px; }
+    .section-heading h2 { margin: 0; font-family: var(--serif); font-size: 37px; font-weight: 600; line-height: 1.2; }
+    .section-index { color: var(--copper); font-size: 11px; font-weight: 700; letter-spacing: .13em; }
+    .about-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: 70px; }
+    .about-label { color: var(--copper); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .about-text { max-width: 670px; color: #53605e; font-size: 17px; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .work-item { min-height: 228px; padding: 25px 26px 26px 0; }
+    .work-item + .work-item { padding-left: 26px; border-left: 1px solid var(--line); }
+    .work-number { color: var(--copper); font-size: 12px; font-weight: 700; }
+    .work-item h3 { margin: 27px 0 10px; font-family: var(--serif); font-size: 22px; font-weight: 600; }
+    .work-item p { max-width: 290px; margin-bottom: 0; color: var(--muted); font-size: 13px; }
+    .timeline-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
+    .subheading { display: flex; align-items: center; gap: 12px; margin: 0 0 25px; font-size: 17px; font-weight: 700; }
+    .subheading::before { content: ""; width: 24px; height: 2px; background: var(--copper); }
+    .timeline { margin: 0; padding: 0; list-style: none; }
+    .timeline li { position: relative; margin-left: 5px; padding: 0 0 26px 23px; border-left: 1px solid #c8cec8; }
+    .timeline li:last-child { padding-bottom: 0; border-left-color: transparent; }
+    .timeline li::before { content: ""; position: absolute; top: 5px; left: -5px; width: 9px; height: 9px; border: 1px solid var(--copper); border-radius: 50%; background: var(--paper); }
+    .date { margin-bottom: 5px; color: var(--copper); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .timeline h4 { margin: 0 0 3px; font-size: 15px; font-weight: 700; line-height: 1.4; }
+    .timeline p { margin: 0; color: var(--muted); font-size: 13px; }
+    .experience-copy { max-width: 460px; margin: 25px 0 0; color: #56615f; font-size: 14px; }
+    .skills-section { background: var(--deep); color: var(--white); }
+    .skills-section .section-index { color: #d39a70; }
+    .skills-section .section-heading { border-bottom: 1px solid #455555; padding-bottom: 25px; }
+    .skills-section .section-heading h2 { color: var(--white); }
+    .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
+    .skills-layout h3 { margin-bottom: 19px; color: #d8a47e; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 9px; }
+    .skill-list span { padding: 8px 11px; border: 1px solid #526060; color: #eef0e9; font-size: 12px; }
+    .languages { color: #eef0e9; font-size: 14px; }
+    .contact-section { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 35px; }
+    .contact-section h2 { max-width: 620px; margin: 0; font-family: var(--serif); font-size: clamp(36px, 5vw, 55px); font-weight: 600; line-height: 1.14; }
+    .contact-meta { display: grid; gap: 9px; color: #53605e; font-size: 13px; }
+    .contact-meta a { text-decoration-color: #b6bdb6; text-underline-offset: 3px; }
+    footer { padding: 18px 0 25px; border-top: 1px solid var(--line); color: #78817e; font-size: 11px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+    .reveal { animation: rise .7s both; }
+    .hero .reveal:nth-child(2) { animation-delay: .12s; }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 38px, 600px); }
+      .site-header { height: 70px; }
+      .nav { gap: 16px; }
+      .nav a { font-size: 12px; }
+      .nav a:nth-child(2) { display: none; }
+      .nav .nav-contact { padding: 8px 10px; }
+      .hero { grid-template-columns: 1fr; gap: 36px; padding: 54px 0 62px; }
+      .hero::before { width: 100vw; }
+      h1 { font-size: clamp(48px, 13vw, 68px); }
+      .portrait-wrap { justify-self: start; width: min(82%, 350px); aspect-ratio: 1; }
+      .portrait-caption { right: -22px; }
+      .section { padding: 56px 0; }
+      .section-heading { margin-bottom: 25px; }
+      .section-heading h2 { font-size: 31px; }
+      .about-grid, .timeline-layout, .skills-layout { grid-template-columns: 1fr; gap: 24px; }
+      .about-text { font-size: 16px; }
+      .work-grid { grid-template-columns: 1fr; }
+      .work-item, .work-item + .work-item { min-height: 0; padding: 22px 0; border-left: 0; }
+      .work-item + .work-item { border-top: 1px solid var(--line); }
+      .work-item h3 { margin-top: 14px; }
+      .contact-section { grid-template-columns: 1fr; align-items: start; }
+      .contact-section h2 { font-size: 42px; }
+    }
+    @media (max-width: 420px) {
+      .shell { width: calc(100% - 32px); }
+      .wordmark { gap: 8px; font-size: 12px; }
+      .monogram { width: 31px; height: 31px; }
+      .nav { gap: 10px; }
+      .nav a { font-size: 11px; }
+      .actions { align-items: stretch; flex-direction: column; }
+      .button { width: 100%; }
+      .footer-inner { flex-direction: column; gap: 3px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline" aria-hidden="true"></div>
+  <header class="site-header shell">
+    <a class="wordmark" href="#home" aria-label="Carin Benjamin, home"><span class="monogram">CB</span><span>CARIN N. BENJAMIN</span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a class="nav-contact" href="#contact">Get in touch</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero shell" id="home" aria-labelledby="hero-title">
+      <div class="reveal">
+        <p class="eyebrow">Project Manager · Information Systems</p>
+        <h1 id="hero-title">Carin N.<br>Benjamin</h1>
+        <p class="hero-role">Thoughtful planning. Projects that move forward.</p>
+        <p class="hero-copy">I bring structure, clear communication, and collaborative problem-solving to information systems projects, from planning through delivery.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#experience">Explore my experience</a>
+          <a class="button button-quiet" href="mailto:benjamincarin33@gmail.com">Contact me</a>
+        </div>
+      </div>
+      <div class="portrait-wrap reveal">
+        <div class="portrait" id="portrait-frame">
+          <div class="portrait-placeholder" id="portrait-placeholder"><strong>CB</strong><span>PROJECT MANAGER</span></div>
+        </div>
+        <label class="portrait-caption" for="portrait-upload">Carin N. Benjamin<br>Project Manager</label>
+        <input id="portrait-upload" type="file" accept="image/*" hidden aria-label="Choose profile photo">
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="shell">
+        <div class="section-heading"><h2>A little about me</h2><span class="section-index">01 / PROFILE</span></div>
+        <div class="about-grid">
+          <div class="about-label">Organized by nature.<br>Collaborative by choice.</div>
+          <div class="about-text">
+            <p>I’m a dedicated and organized Project Manager with a strong interest in Information Systems and project development. I coordinate teams, plan project activities, monitor progress, and help keep tasks moving on time.</p>
+            <p>I value teamwork, communication, and problem-solving. I’m willing to learn new skills and take responsibility when challenges arise, with a focus on meeting project objectives and maintaining quality.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="shell">
+        <div class="section-heading"><h2>How I contribute</h2><span class="section-index">02 / APPROACH</span></div>
+        <div class="work-grid">
+          <article class="work-item"><span class="work-number">01</span><h3>Project coordination</h3><p>Aligning people, tasks, and timelines so the team can make steady progress toward shared objectives.</p></article>
+          <article class="work-item"><span class="work-number">02</span><h3>Planning &amp; follow-through</h3><p>Organizing project activities, monitoring deadlines, and preparing documentation to keep work clear and on track.</p></article>
+          <article class="work-item"><span class="work-number">03</span><h3>Collaborative delivery</h3><p>Building communication and problem-solving into the process, while staying open to learning and adapting.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="shell">
+        <div class="section-heading"><h2>Experience &amp; education</h2><span class="section-index">03 / JOURNEY</span></div>
+        <div class="timeline-layout">
+          <div>
+            <h3 class="subheading">Experience</h3>
+            <ol class="timeline">
+              <li><div class="date">2024 — Present</div><h4>Project Manager</h4><p>Information Systems projects</p></li>
+            </ol>
+            <p class="experience-copy">Managed and coordinated academic Information Systems projects by assigning tasks, monitoring deadlines, organizing team activities, and preparing project documentation. Supported teams in achieving project objectives and developed leadership, communication, and planning skills through collaborative system development.</p>
+          </div>
+          <div>
+            <h3 class="subheading">Education</h3>
+            <ol class="timeline">
+              <li><div class="date">2023 — Present</div><h4>BS Information Systems</h4><p>Carlos Hilado Memorial State University</p></li>
+              <li><div class="date">2021 — 2023</div><h4>Senior High School · Cookery</h4><p>Rafael B. Lacson Memorial High School</p></li>
+              <li><div class="date">2017 — 2021</div><h4>Secondary Education</h4><p>Rafael B. Lacson</p></li>
+              <li><div class="date">2011 — 2017</div><h4>Primary Education</h4><p>Talisay Elementary School</p></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="skills">
+      <div class="shell">
+        <div class="section-heading"><h2>Skills &amp; languages</h2><span class="section-index">04 / TOOLKIT</span></div>
+        <div class="skills-layout">
+          <div><h3>Strengths</h3><div class="skill-list"><span>Leadership</span><span>Time management</span><span>Planning &amp; organization</span><span>Communication</span><span>Adaptability</span></div></div>
+          <div><h3>Languages</h3><p class="languages">English <span aria-hidden="true">·</span> Hiligaynon</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell contact-section" id="contact">
+      <div><p class="eyebrow">Have a project in mind?</p><h2>Let’s make good work happen.</h2></div>
+      <div class="contact-meta">
+        <a href="mailto:benjamincarin33@gmail.com">benjamincarin33@gmail.com</a>
+        <a href="tel:+639486154000">+63 948 615 4000</a>
+        <span>Sitio Mambucog, Brgy. Zone 16</span>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell footer-inner"><span>© 2026 Carin N. Benjamin</span><a href="#home">Back to top ↑</a></div></footer>
+  <script>
+    const portraitUpload = document.querySelector('#portrait-upload');
+    const portraitFrame = document.querySelector('#portrait-frame');
+    portraitUpload.addEventListener('change', () => {
+      const file = portraitUpload.files?.[0];
+      if (!file || !file.type.startsWith('image/')) return;
+      const image = document.createElement('img');
+      image.alt = 'Portrait of Carin N. Benjamin';
+      image.src = URL.createObjectURL(file);
+      portraitFrame.replaceChildren(image);
+    });
+  </script>
+</body>
+</html>
